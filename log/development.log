@@ -1,0 +1,4 @@
+  [1m[35m (378.0ms)[0m  [1m[35mCREATE DATABASE "Auth-App_development" ENCODING = 'unicode'[0m
+  ↳ /home/shahriar/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (232.6ms)[0m  [1m[35mCREATE DATABASE "Auth-App_test" ENCODING = 'unicode'[0m
+  ↳ /home/shahriar/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
