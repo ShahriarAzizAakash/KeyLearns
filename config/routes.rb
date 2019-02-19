@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   resources :users
   get '/profile' => "users#profile"
+
+  resources :courses
 end
