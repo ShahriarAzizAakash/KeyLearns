@@ -12,17 +12,13 @@ class CoursesController < ApiController
     end
 
     def create 
-        if user.user_type :creator
-            course = Course.new(course_params)
-            course.user = current_user
+        course = Course.new(course_params)
+        course.user = current_user
 
-            if course.save 
-                render json:{ message: 'ok', course: course}
-            else
-                render json: {message: "Could not create Course!"}
-            end
-        else 
-            render json: {message: "Course creation is only for creators"}
+        if course.save 
+            render json:{ message: 'ok', course: course}
+        else
+            render json: {message: "Could not create Course!"}
         end
     end
 
