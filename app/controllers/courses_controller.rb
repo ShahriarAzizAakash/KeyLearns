@@ -12,7 +12,7 @@ class CoursesController < ApiController
     end
 
     def create 
-        if user.user_type: :creator
+        if user.user_type :creator
             course = Course.new(course_params)
             course.user = current_user
 
