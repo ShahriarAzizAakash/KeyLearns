@@ -24,7 +24,7 @@ module AuthApp
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'http://localhost:3000', 'https://5x9l0v3vl4.codesandbox.io/', 'https://mysterious-meadow-58696.herokuapp.com/'
+        origins 'x'
         resource '*', :headers => :any, :methods => [:get, :post, :put, :delete, :options]
       end
     end
