@@ -1,12 +1,7 @@
                    Prefix Verb   URI Pattern                                                                              Controller#Action
                     login POST   /login(.:format)                                                                         sessions#create
                    logout DELETE /logout(.:format)                                                                        sessions#destroy
-                    users GET    /users(.:format)                                                                         users#index
-                          POST   /users(.:format)                                                                         users#create
-                     user GET    /users/:id(.:format)                                                                     users#show
-                          PATCH  /users/:id(.:format)                                                                     users#update
-                          PUT    /users/:id(.:format)                                                                     users#update
-                          DELETE /users/:id(.:format)                                                                     users#destroy
+                 register POST   /register(.:format)                                                                      users#create
                   profile GET    /profile(.:format)                                                                       users#profile
                   courses GET    /courses(.:format)                                                                       courses#index
                           POST   /courses(.:format)                                                                       courses#create
