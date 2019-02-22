@@ -1856,3 +1856,21 @@ Processing by SessionsController#create as */*
 Completed 200 OK in 56ms (Views: 0.1ms | ActiveRecord: 3.9ms)
 
 
+Started GET "/courses" for 127.0.0.1 at 2019-02-21 23:23:15 +0600
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#index as */*
+  Parameters: {"username"=>"aakash", "password"=>"[FILTERED]", "course"=>{}}
+  [1m[36mCourse Load (1.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/courses_controller.rb:6
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2019-02-21 23:23:33 +0600
+Processing by CoursesController#index as */*
+  Parameters: {"username"=>"aakash", "password"=>"[FILTERED]", "course"=>{}}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/controllers/courses_controller.rb:6
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
