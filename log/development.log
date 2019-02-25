@@ -6805,3 +6805,176 @@ NoMethodError (undefined method `where' for #<Enrollment:0x00007f51f4ac0ec0>
 Did you mean?  when):
   
 app/controllers/enrollments_controller.rb:23:in `create'
+Started POST "/enrollments" for 127.0.0.1 at 2019-02-25 23:32:37 +0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by EnrollmentsController#create as */*
+  Parameters: {"enrollment"=>{"course_id"=>"157"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "cuK5AqTuwkipN1BjBZoyqbf8"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 157], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "cuK5AqTuwkipN1BjBZoyqbf8"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[36mCACHE Course Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 157], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[36mEnrollment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "enrollments" WHERE "enrollments"."course_id" = $1 AND "enrollments"."user_id" = $2 LIMIT $3[0m  [["course_id", 157], ["user_id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[36mEnrollment Create (1.0ms)[0m  [1m[32mINSERT INTO "enrollments" ("course_id", "user_id", "course_title", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["course_id", 157], ["user_id", 56], ["course_title", "Lorem Ipsum"], ["username", "anwar"], ["created_at", "2019-02-25 17:32:37.294044"], ["updated_at", "2019-02-25 17:32:37.294044"]]
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/enrollments_controller.rb:26
+Completed 200 OK in 41ms (Views: 0.2ms | ActiveRecord: 11.5ms)
+
+
+Started POST "/enrollments" for 127.0.0.1 at 2019-02-25 23:32:41 +0600
+Processing by EnrollmentsController#create as */*
+  Parameters: {"enrollment"=>{"course_id"=>"157"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "cuK5AqTuwkipN1BjBZoyqbf8"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 157], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "cuK5AqTuwkipN1BjBZoyqbf8"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[36mCACHE Course Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 157], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[36mEnrollment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "enrollments" WHERE "enrollments"."course_id" = $1 AND "enrollments"."user_id" = $2 LIMIT $3[0m  [["course_id", 157], ["user_id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/enrollments_controller.rb:26
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-02-25 23:32:56 +0600
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/profile" for 127.0.0.1 at 2019-02-25 23:33:05 +0600
+Processing by UsersController#profile as */*
+  Parameters: {"username"=>"anwar", "password"=>"[FILTERED]", "user"=>{"username"=>"anwar"}}
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-02-25 23:33:16 +0600
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"anwar", "password"=>"[FILTERED]", "session"=>{"username"=>"anwar", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "anwar"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "anwar"], ["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:20
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "anwar@gmail.com"], ["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:20
+  [1m[36mUser Update (0.7ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "d4t4w7VEPxt1En8XRbWDbrMf"], ["updated_at", "2019-02-25 17:33:16.717024"], ["id", 56]]
+  ↳ app/controllers/sessions_controller.rb:20
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:20
+Completed 200 OK in 49ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2019-02-25 23:33:40 +0600
+Processing by UsersController#profile as */*
+  Parameters: {"username"=>"001test", "password"=>"[FILTERED]", "user"=>{"username"=>"001test"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "d4t4w7VEPxt1En8XRbWDbrMf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "d4t4w7VEPxt1En8XRbWDbrMf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."user_id" = $1[0m  [["user_id", 56]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mEnrollment Load (0.1ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments" WHERE "enrollments"."user_id" = $1[0m  [["user_id", 56]]
+  ↳ app/controllers/users_controller.rb:13
+Completed 200 OK in 7ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/enrollments" for 127.0.0.1 at 2019-02-25 23:33:57 +0600
+Processing by EnrollmentsController#create as */*
+  Parameters: {"enrollment"=>{"course_id"=>"154"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "d4t4w7VEPxt1En8XRbWDbrMf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "d4t4w7VEPxt1En8XRbWDbrMf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[36mCACHE Course Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[36mEnrollment Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "enrollments" WHERE "enrollments"."course_id" = $1 AND "enrollments"."user_id" = $2 LIMIT $3[0m  [["course_id", 154], ["user_id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[36mEnrollment Create (0.2ms)[0m  [1m[32mINSERT INTO "enrollments" ("course_id", "user_id", "course_title", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["course_id", 154], ["user_id", 56], ["course_title", "Lorem Ipsum"], ["username", "anwar"], ["created_at", "2019-02-25 17:33:57.669786"], ["updated_at", "2019-02-25 17:33:57.669786"]]
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/enrollments_controller.rb:26
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2019-02-25 23:34:03 +0600
+Processing by UsersController#profile as */*
+  Parameters: {"username"=>"001test", "password"=>"[FILTERED]", "user"=>{"username"=>"001test"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "d4t4w7VEPxt1En8XRbWDbrMf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "d4t4w7VEPxt1En8XRbWDbrMf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."user_id" = $1[0m  [["user_id", 56]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mEnrollment Load (0.1ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments" WHERE "enrollments"."user_id" = $1[0m  [["user_id", 56]]
+  ↳ app/controllers/users_controller.rb:13
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/enrollments" for 127.0.0.1 at 2019-02-25 23:34:08 +0600
+Processing by EnrollmentsController#create as */*
+  Parameters: {"enrollment"=>{"course_id"=>"154"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "d4t4w7VEPxt1En8XRbWDbrMf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:17
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "d4t4w7VEPxt1En8XRbWDbrMf"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[36mCACHE Course Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[36mEnrollment Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "enrollments" WHERE "enrollments"."course_id" = $1 AND "enrollments"."user_id" = $2 LIMIT $3[0m  [["course_id", 154], ["user_id", 56], ["LIMIT", 1]]
+  ↳ app/controllers/enrollments_controller.rb:26
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/enrollments_controller.rb:26
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+

@@ -20,15 +20,13 @@ class EnrollmentsController < ApiController
         enrollment.username = user.username
         enrollment.user_id = user.id
 
-        if Enrollment.find_by(enrollment_params).where(user_id: user.id) #this condition needs to be fixed
-            render json: {message: "You have already enrolled!"}
+
+        if enrollment.save 
+            render json:{ message: 'ok', enrollment: enrollment}
         else
-            if enrollment.save 
-                render json:{ message: 'ok', enrollment: enrollment}
-            else
-                render json: {message: "Could not enroll!"}
-            end
+            render json: {message: "You have already enrolled!"}
         end
+        
     end
 
     private
