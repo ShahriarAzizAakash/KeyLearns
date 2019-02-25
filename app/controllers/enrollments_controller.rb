@@ -1,10 +1,11 @@
 class EnrollmentsController < ApiController
     before_action :require_login
 
-    def index 
-        enrollments = Enrollment.all 
-        render json: {enrollments: enrollments}
-    end
+    #Don't need to index all enrollments right now. this is for admin accounts only.
+    #def index 
+       # enrollments = Enrollment.all 
+       # render json: {enrollments: enrollments}
+    #end
 
     def show 
         enrollment = Enrollment.find(params[:id])
@@ -26,7 +27,7 @@ class EnrollmentsController < ApiController
         else
             render json: {message: "You have already enrolled!"}
         end
-        
+
     end
 
     private
