@@ -10,7 +10,8 @@ class CoursesController < ApiController
     def show 
         course = Course.find(params[:id])
         author = Course.find_by(params[:author])
-        render json: {course: course}
+        course_enrollments = course.enrollments
+        render json: {course: course, enrollments: course_enrollments}
     end
 
     def create 

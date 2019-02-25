@@ -7068,3 +7068,19 @@ Processing by EnrollmentsController#index as */*
 Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.4ms)
 
 
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY "courses"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+Started GET "/courses/154" for 127.0.0.1 at 2019-02-26 00:19:42 +0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"154"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:12
+  [1m[36mEnrollment Load (0.2ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1[0m  [["course_id", 154]]
+  ↳ app/controllers/courses_controller.rb:14
+Completed 200 OK in 18ms (Views: 5.0ms | ActiveRecord: 4.3ms)
+
+
