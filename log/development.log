@@ -7084,3 +7084,293 @@ Processing by CoursesController#show as */*
 Completed 200 OK in 18ms (Views: 5.0ms | ActiveRecord: 4.3ms)
 
 
+Started GET "/courses/154" for 127.0.0.1 at 2019-02-26 00:23:53 +0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"154"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:12
+  [1m[36mEnrollment Load (0.3ms)[0m  [1m[34mSELECT  "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1 LIMIT $2[0m  [["course_id", 154], ["LIMIT", 11]]
+  ↳ /home/shahriar/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 3.5ms)
+
+
+  
+  [1m[36mCACHE Enrollment Load (0.0ms)[0m  [1m[34mSELECT  "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1 LIMIT $2[0m  [["course_id", 154], ["LIMIT", 11]]
+  ↳ /home/shahriar/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `Count' for #<Enrollment::ActiveRecord_Associations_CollectionProxy:0x00007f57989cc6c8>
+Did you mean?  concat):
+  
+app/controllers/courses_controller.rb:14:in `show'
+  [1m[36mCACHE Enrollment Load (0.0ms)[0m  [1m[34mSELECT  "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1 LIMIT $2[0m  [["course_id", 154], ["LIMIT", 11]]
+  ↳ /home/shahriar/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/did_you_mean-1.3.0/lib/did_you_mean/core_ext/name_error.rb:8
+Started GET "/courses/154" for 127.0.0.1 at 2019-02-26 00:26:30 +0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"154"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.7ms)
+
+
+  
+ArgumentError (Unsupported argument type: 154 (Integer)):
+  
+app/controllers/courses_controller.rb:15:in `show'
+Started GET "/courses/154" for 127.0.0.1 at 2019-02-26 00:26:43 +0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"154"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.8ms)
+
+
+  
+ArgumentError (Unsupported argument type: 154 (Integer)):
+  
+app/controllers/courses_controller.rb:15:in `show'
+Started GET "/courses/154" for 127.0.0.1 at 2019-02-26 00:27:25 +0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"154"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 2.8ms)
+
+
+  
+ArgumentError (Unsupported argument type: 154 (Integer)):
+  
+app/controllers/courses_controller.rb:15:in `show'
+Started GET "/courses/154" for 127.0.0.1 at 2019-02-26 00:27:39 +0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"154"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  [1m[36mEnrollment Load (0.3ms)[0m  [1m[34mSELECT  "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1 LIMIT $2[0m  [["course_id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:15
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 4.7ms)
+
+
+  
+NoMethodError (undefined method `Count' for #<Enrollment:0x00007f9abca745f0>):
+  
+app/controllers/courses_controller.rb:16:in `show'
+Started GET "/courses/154" for 127.0.0.1 at 2019-02-26 00:28:01 +0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"154"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  [1m[36mEnrollment Load (0.1ms)[0m  [1m[34mSELECT  "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1 LIMIT $2[0m  [["course_id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:15
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 4.5ms)
+
+
+  
+NoMethodError (undefined method `Count' for #<Enrollment:0x00007fb8cca51798>):
+  
+app/controllers/courses_controller.rb:16:in `show'
+Started GET "/courses/154" for 127.0.0.1 at 2019-02-26 00:29:24 +0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"154"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  [1m[36mEnrollment Load (0.2ms)[0m  [1m[34mSELECT  "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1 LIMIT $2[0m  [["course_id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:15
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 4.6ms)
+
+
+  
+NoMethodError (undefined method `Count' for #<Enrollment:0x00007faa68a515f8>):
+  
+app/controllers/courses_controller.rb:16:in `show'
+Started GET "/courses/154" for 127.0.0.1 at 2019-02-26 00:30:16 +0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"154"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 2.6ms)
+
+
+  
+NoMethodError (undefined method `Count' for #<Class:0x00007ff5749bfcf0>):
+  
+app/controllers/courses_controller.rb:15:in `show'
+Started GET "/courses/154" for 127.0.0.1 at 2019-02-26 00:31:44 +0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"154"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  [1m[36mEnrollment Load (0.2ms)[0m  [1m[34mSELECT  "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1 LIMIT $2[0m  [["course_id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:15
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 4.6ms)
+
+
+  
+NoMethodError (undefined method `all' for #<Enrollment:0x00007f36d4a3c0c0>):
+  
+app/controllers/courses_controller.rb:16:in `show'
+Started GET "/courses/154" for 127.0.0.1 at 2019-02-26 00:32:18 +0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"154"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "enrollments"[0m
+  ↳ app/controllers/courses_controller.rb:15
+  [1m[36mEnrollment Load (0.2ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1[0m  [["course_id", 154]]
+  ↳ app/controllers/courses_controller.rb:16
+Completed 200 OK in 20ms (Views: 5.5ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/courses/154" for 127.0.0.1 at 2019-02-26 00:33:05 +0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"154"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  [1m[36mEnrollment Load (0.2ms)[0m  [1m[34mSELECT  "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1 LIMIT $2[0m  [["course_id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:15
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 4.4ms)
+
+
+  
+NoMethodError (undefined method `count' for #<Enrollment:0x00007fe4d8a51558>):
+  
+app/controllers/courses_controller.rb:15:in `show'
+Started GET "/courses/154" for 127.0.0.1 at 2019-02-26 00:33:29 +0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"154"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "enrollments" WHERE "enrollments"."course_id" = $1[0m  [["course_id", 154]]
+  ↳ app/controllers/courses_controller.rb:15
+  [1m[36mEnrollment Load (0.1ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1[0m  [["course_id", 154]]
+  ↳ app/controllers/courses_controller.rb:16
+Completed 200 OK in 20ms (Views: 4.9ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/courses/154" for 127.0.0.1 at 2019-02-26 00:33:57 +0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"154"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "enrollments" WHERE "enrollments"."course_id" = $1[0m  [["course_id", 154]]
+  ↳ app/controllers/courses_controller.rb:15
+  [1m[36mEnrollment Load (0.2ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1[0m  [["course_id", 154]]
+  ↳ app/controllers/courses_controller.rb:16
+Completed 200 OK in 19ms (Views: 4.8ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/courses/155" for 127.0.0.1 at 2019-02-26 00:34:09 +0600
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"155"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 155], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "enrollments" WHERE "enrollments"."course_id" = $1[0m  [["course_id", 155]]
+  ↳ app/controllers/courses_controller.rb:15
+  [1m[36mEnrollment Load (0.1ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1[0m  [["course_id", 155]]
+  ↳ app/controllers/courses_controller.rb:16
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/courses/157" for 127.0.0.1 at 2019-02-26 00:34:17 +0600
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"157"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 157], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "enrollments" WHERE "enrollments"."course_id" = $1[0m  [["course_id", 157]]
+  ↳ app/controllers/courses_controller.rb:15
+  [1m[36mEnrollment Load (0.1ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1[0m  [["course_id", 157]]
+  ↳ app/controllers/courses_controller.rb:16
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/152" for 127.0.0.1 at 2019-02-26 00:34:26 +0600
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"152"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 152], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "enrollments" WHERE "enrollments"."course_id" = $1[0m  [["course_id", 152]]
+  ↳ app/controllers/courses_controller.rb:15
+  [1m[36mEnrollment Load (0.2ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1[0m  [["course_id", 152]]
+  ↳ app/controllers/courses_controller.rb:16
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/154" for 127.0.0.1 at 2019-02-26 00:34:30 +0600
+Processing by CoursesController#show as */*
+  Parameters: {"id"=>"154"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 154], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:11
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "enrollments" WHERE "enrollments"."course_id" = $1[0m  [["course_id", 154]]
+  ↳ app/controllers/courses_controller.rb:15
+  [1m[36mEnrollment Load (0.2ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments" WHERE "enrollments"."course_id" = $1[0m  [["course_id", 154]]
+  ↳ app/controllers/courses_controller.rb:16
+Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/enrollments" for 127.0.0.1 at 2019-02-26 00:34:59 +0600
+Processing by EnrollmentsController#create as */*
+  Parameters: {"enrollment"=>{"course_id"=>"154"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "bTEikxpGjcosAoc3n2ktp9Yb"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 4ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
