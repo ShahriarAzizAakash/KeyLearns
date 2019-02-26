@@ -7374,3 +7374,37 @@ Filter chain halted as :require_login rendered or redirected
 Completed 401 Unauthorized in 4ms (Views: 0.1ms | ActiveRecord: 1.0ms)
 
 
+Started POST "/login" for 127.0.0.1 at 2019-02-26 22:30:49 +0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"loremipsum", "password"=>"[FILTERED]", "session"=>{"username"=>"loremipsum", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "loremipsum"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:14
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:20
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "loremipsum"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:20
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "lorum@ipsum.com"], ["id", 57], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:20
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "hzpMrozEij6chFq9eag7cCFY"], ["updated_at", "2019-02-26 16:30:49.696776"], ["id", 57]]
+  ↳ app/controllers/sessions_controller.rb:20
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:20
+Completed 200 OK in 74ms (Views: 0.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2019-02-26 22:31:26 +0600
+Processing by UsersController#profile as */*
+  Parameters: {"username"=>"001test", "password"=>"[FILTERED]", "user"=>{"username"=>"001test"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "hzpMrozEij6chFq9eag7cCFY"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "hzpMrozEij6chFq9eag7cCFY"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mCourse Load (1.4ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."user_id" = $1[0m  [["user_id", 57]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mEnrollment Load (0.8ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments" WHERE "enrollments"."user_id" = $1[0m  [["user_id", 57]]
+  ↳ app/controllers/users_controller.rb:13
+Completed 200 OK in 21ms (Views: 9.1ms | ActiveRecord: 4.9ms)
+
+
