@@ -1,8 +1,14 @@
-                   Prefix Verb   URI Pattern                                                                              Controller#Action
+Prefix Verb   URI Pattern                                                                              Controller#Action
                     login POST   /login(.:format)                                                                         sessions#create
                    logout DELETE /logout(.:format)                                                                        sessions#destroy
                  register POST   /register(.:format)                                                                      users#create
                   profile GET    /profile(.:format)                                                                       users#profile
+              enrollments GET    /enrollments(.:format)                                                                   enrollments#index
+                          POST   /enrollments(.:format)                                                                   enrollments#create
+               enrollment GET    /enrollments/:id(.:format)                                                               enrollments#show
+                          PATCH  /enrollments/:id(.:format)                                                               enrollments#update
+                          PUT    /enrollments/:id(.:format)                                                               enrollments#update
+                          DELETE /enrollments/:id(.:format)                                                               enrollments#destroy
                   courses GET    /courses(.:format)                                                                       courses#index
                           POST   /courses(.:format)                                                                       courses#create
                    course GET    /courses/:id(.:format)                                                                   courses#show
