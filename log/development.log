@@ -7684,3 +7684,165 @@ Processing by SessionsController#create as */*
 Completed 200 OK in 53ms (Views: 0.1ms | ActiveRecord: 0.2ms)
 
 
+Started POST "/login" for 127.0.0.1 at 2019-03-21 02:17:03 +0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/shahriar/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"aakash", "password"=>"[FILTERED]", "session"=>{"username"=>"aakash", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aakash"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Completed 200 OK in 62ms (Views: 0.1ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-21 02:17:04 +0600
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"aakash", "password"=>"[FILTERED]", "session"=>{"username"=>"aakash", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aakash"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Completed 200 OK in 52ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-21 02:17:05 +0600
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"aakash", "password"=>"[FILTERED]", "session"=>{"username"=>"aakash", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aakash"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Completed 200 OK in 52ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-21 02:17:06 +0600
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"aakash", "password"=>"[FILTERED]", "session"=>{"username"=>"aakash", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aakash"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Completed 200 OK in 53ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-03-21 02:17:18 +0600
+Processing by SessionsController#destroy as */*
+  Parameters: {"username"=>"aakash", "password"=>"[FILTERED]", "session"=>{"username"=>"aakash", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `invalidate_token' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:30:in `logout'
+app/controllers/sessions_controller.rb:14:in `destroy'
+Started DELETE "/logout" for 127.0.0.1 at 2019-03-21 02:17:31 +0600
+Processing by SessionsController#destroy as */*
+  Parameters: {"username"=>"aakash", "password"=>"[FILTERED]", "session"=>{"username"=>"aakash", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "w4gq8bvDTwrmm3VKQEnjYGSs"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1 WHERE "users"."id" = $2[0m  [["auth_token", nil], ["id", 55]]
+  ↳ app/models/user.rb:11
+Completed 200 OK in 2ms (ActiveRecord: 1.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-21 02:17:45 +0600
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"aakash", "password"=>"[FILTERED]", "session"=>{"username"=>"aakash", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aakash"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/sessions_controller.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "aakash"], ["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:21
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "aakash@gmail.com"], ["id", 55], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:21
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["auth_token", "uSjePk4eTvfLN7aXNCiCiEPk"], ["updated_at", "2019-03-20 20:17:45.927899"], ["id", 55]]
+  ↳ app/controllers/sessions_controller.rb:21
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/sessions_controller.rb:21
+Completed 200 OK in 57ms (Views: 0.1ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-21 02:18:11 +0600
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"aakash", "password"=>"[FILTERED]", "session"=>{"username"=>"aakash", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aakash"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Completed 200 OK in 52ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2019-03-21 02:18:23 +0600
+Processing by UsersController#profile as */*
+  Parameters: {"username"=>"aakash", "password"=>"[FILTERED]", "user"=>{"username"=>"aakash"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uSjePk4eTvfLN7aXNCiCiEPk"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uSjePk4eTvfLN7aXNCiCiEPk"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mCourse Load (1.7ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."user_id" = $1[0m  [["user_id", 55]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mEnrollment Load (0.9ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments" WHERE "enrollments"."user_id" = $1[0m  [["user_id", 55]]
+  ↳ app/controllers/users_controller.rb:13
+Completed 200 OK in 39ms (Views: 18.4ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-03-21 02:18:52 +0600
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"aakash", "password"=>"[FILTERED]", "session"=>{"username"=>"aakash", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "aakash"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:15
+Completed 200 OK in 52ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-03-21 02:19:12 +0600
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/profile" for 127.0.0.1 at 2019-03-21 02:19:19 +0600
+Processing by UsersController#profile as */*
+  Parameters: {"username"=>"aakash", "password"=>"[FILTERED]", "user"=>{"username"=>"aakash"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uSjePk4eTvfLN7aXNCiCiEPk"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uSjePk4eTvfLN7aXNCiCiEPk"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses" WHERE "courses"."user_id" = $1[0m  [["user_id", 55]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mEnrollment Load (0.4ms)[0m  [1m[34mSELECT "enrollments".* FROM "enrollments" WHERE "enrollments"."user_id" = $1[0m  [["user_id", 55]]
+  ↳ app/controllers/users_controller.rb:13
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-03-21 02:19:40 +0600
+Processing by SessionsController#destroy as */*
+  Parameters: {"username"=>"aakash", "password"=>"[FILTERED]", "session"=>{"username"=>"aakash", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uSjePk4eTvfLN7aXNCiCiEPk"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE "users" SET "auth_token" = $1 WHERE "users"."id" = $2[0m  [["auth_token", nil], ["id", 55]]
+  ↳ app/models/user.rb:11
+Completed 200 OK in 3ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2019-03-21 02:19:49 +0600
+Processing by UsersController#profile as */*
+  Parameters: {"username"=>"aakash", "password"=>"[FILTERED]", "user"=>{"username"=>"aakash"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."auth_token" = $1 LIMIT $2[0m  [["auth_token", "uSjePk4eTvfLN7aXNCiCiEPk"], ["LIMIT", 1]]
+  ↳ app/controllers/api_controller.rb:20
+Filter chain halted as :require_login rendered or redirected
+Completed 401 Unauthorized in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
