@@ -9,7 +9,7 @@ class ApplicationController < ActionController::API
     protected
 
         def set_csrf_cookie
-        cookies["X-CSRF-Token"] = form_authenticity_token
+            cookies["X-CSRF-Token"] = form_authenticity_token
         end
 
     private
