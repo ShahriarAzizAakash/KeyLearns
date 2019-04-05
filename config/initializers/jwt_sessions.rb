@@ -1,1 +1,1 @@
-JWTSessions.encryption_key = 'keylearnencryptionkeywithjwtsecuredkey**'
+JWTSessions.encryption_key = 'secret_key_here'
