@@ -1,7 +1,6 @@
 class EnrollmentsController < ApiController
-    before_action :require_login
+    before_action :authorize_access_request!
 
-    #Don't need to index all enrollments right now. this is for admin accounts only.
     #def index 
        # enrollments = Enrollment.all 
        # render json: {enrollments: enrollments}

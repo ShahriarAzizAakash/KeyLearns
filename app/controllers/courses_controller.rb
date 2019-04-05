@@ -1,5 +1,5 @@
 class CoursesController < ApiController
-    before_action :require_login, except: [:index, :show]
+    before_action :authorize_access_request!, except: [:index, :show]
 
     def index 
         courses = Course.all 
@@ -29,7 +29,7 @@ class CoursesController < ApiController
     end
 
     private
-    def course_params
-        params.require(:course).permit(:title, :description, :price)
-    end
+        def course_params
+            params.require(:course).permit(:title, :description, :price)
+        end
 end
