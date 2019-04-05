@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::API
     #include ActionController::HttpAuthentication::Token::ControllerMethods
-
     include JWTSessions::RailsAuthorization
     rescue_from JWTSessions::Errors::Unauthorized, with: :not_authorized
+
 
     private
 
