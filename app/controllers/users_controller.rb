@@ -6,7 +6,8 @@ class UsersController < ApiController
         user = User.find_by(id: current_user.id)
         user_courses = user.courses
         user_enrollments = user.enrollments
-        render json: {user: {username: user.username, email: user.email, name: user.name, courses: user_courses, enrollments: user_enrollments}}
+        user_image = user.image
+        render json: {user: {username: user.username, email: user.email, name: user.name, image: user_image, courses: user_courses, enrollments: user_enrollments}}
     end
 
 end

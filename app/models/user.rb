@@ -5,6 +5,8 @@ class User < ApplicationRecord
     has_secure_token :auth_token
     has_many :courses
     has_many :enrollments
+
+    mount_uploader :image, ImageUploader
     
 
     def invalidate_token
