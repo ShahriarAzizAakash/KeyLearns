@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   post '/content' => "content#create"
 
+  get '/search' => "courses#search"
+
 
   resources :enrollments
   resources :courses

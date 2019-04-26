@@ -1,9 +1,13 @@
 class CoursesController < ApiController
-    before_action :authorize_access_request!, except: [:index, :show]
+    before_action :authorize_access_request!, except: [:index, :show, :search]
+
+    def search
+        courses = Course.where(["LOWER(title) LIKE ?","%#{params[:search].downcase}%"]).order('created_at DESC')
+        render json: {number_of_search_results: courses.count, courses: courses}
+    end
 
     def index 
-        courses = Course.all 
-        author = User.find_by(params[:user_id])
+        courses = Course.order('created_at DESC') 
         render json: {courses: courses}
     end
 
@@ -26,6 +30,19 @@ class CoursesController < ApiController
             render json:{ message: 'ok', course: course}
         else
             render json: {message: "Could not create Course!"}
+        end
+    end
+
+    def update 
+        course = Course.find(params[:id])
+        if current_user == course.user
+            if course.update_attributes(course_params)
+                render json: {message: "updated", course: course}
+            else
+                render json: {message: "Could not update course!"}, status: :unprocessable_entity
+            end
+        else 
+            render json: {message: "You aren't allowed to update this course!"}, status: :unauthorized
         end
     end
 
