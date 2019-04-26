@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   #post '/register' => "users#create"
   get '/profile' => "users#profile"
 
+  post '/content' => "content#create"
+
 
   resources :enrollments
   resources :courses
