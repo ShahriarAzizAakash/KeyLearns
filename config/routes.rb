@@ -9,6 +9,7 @@ Rails.application.routes.draw do
  
   #post '/register' => "users#create"
   get '/profile' => "users#profile"
+  put '/profile/update' => "users#update"
 
   post '/content' => "content#create"
 

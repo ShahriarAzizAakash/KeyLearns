@@ -27,7 +27,6 @@ class EnrollmentsController < ApiController
         else
             render json: {message: "You have already enrolled!"}
         end
-
     end
 
     private
