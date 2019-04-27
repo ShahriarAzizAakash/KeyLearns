@@ -33,7 +33,7 @@ class CoursesController < ApiController
     end
 
     def top
-        top_courses = Course.order("numofenrollments DESC")
+        top_courses = Course.order("numofenrollments DESC").limit(10)
         
         render json: {top_courses: top_courses}
     end
