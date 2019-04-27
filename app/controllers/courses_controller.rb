@@ -1,5 +1,5 @@
 class CoursesController < ApiController
-    before_action :authorize_access_request!, except: [:index, :show, :search]
+    before_action :authorize_access_request!, except: [:index, :show, :search, :top]
 
     def search
         courses = Course.where(["LOWER(title) LIKE ?","%#{params[:search].downcase}%"]).order('created_at DESC')
@@ -17,8 +17,7 @@ class CoursesController < ApiController
         course_content = Content.where(course_id: course_id)
         author = Course.find_by(params[:author])
         course_enrollments = course.enrollments
-        number_of_enrollment = Enrollment.where(course_id: course_id).count
-        render json: {course: course,course_content: course_content, enrollments: course_enrollments, total_enrollments: number_of_enrollment}
+        render json: {course: course,course_content: course_content, enrollments: course_enrollments}
     end
 
     def create 
@@ -31,6 +30,12 @@ class CoursesController < ApiController
         else
             render json: {message: "Could not create Course!"}
         end
+    end
+
+    def top
+        top_courses = Course.order("numofenrollments DESC")
+        
+        render json: {top_courses: top_courses}
     end
 
     def update 

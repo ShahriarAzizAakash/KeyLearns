@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   post '/content' => "content#create"
 
   get '/search' => "courses#search"
-
+  get '/courses/top' => "courses#top"
 
   resources :enrollments
   resources :courses

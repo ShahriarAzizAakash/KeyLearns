@@ -20,9 +20,10 @@ class EnrollmentsController < ApiController
         enrollment.username = user.username
         enrollment.user_id = user.id
 
-
-        if enrollment.save 
-            render json:{ message: 'ok', enrollment: enrollment}
+        if enrollment.save
+            number_of_enrollment = Enrollment.where(course_id: course_id).count        
+            course.update_columns(numofenrollments: number_of_enrollment)
+            render json:{ message: 'ok', enrollment: enrollment, number_of_enrollment: course.numofenrollments}
         else
             render json: {message: "You have already enrolled!"}
         end
@@ -30,8 +31,8 @@ class EnrollmentsController < ApiController
     end
 
     private
-    def enrollment_params
-        params.require(:enrollment).permit(:course_id)
-    end
+        def enrollment_params
+            params.require(:enrollment).permit(:course_id)
+        end
     
 end
