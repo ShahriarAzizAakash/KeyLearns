@@ -18,6 +18,6 @@ class ContentController < ApiController
 
     private
         def content_params
-            params.require(:content).permit(:course_id, attachments: [])
+            params.require(:content).permit(:course_id, :section, attachments: [])
         end
 end
