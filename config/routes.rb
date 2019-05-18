@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get '/profile' => "users#profile"
   put '/profile/update' => "users#update"
 
-  post '/content' => "content#create"
+  post '/course/upload/content' => "content#create"
 
   get '/courses/search' => "courses#search"
   get '/courses/top' => "courses#top"
