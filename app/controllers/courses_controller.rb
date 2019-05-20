@@ -53,6 +53,6 @@ class CoursesController < ApiController
 
     private
         def course_params
-            params.require(:course).permit(:title, :description, :price, :featuredImage, tags: [])
+            params.require(:course).permit(:title, :description, :requirements, :price, :featuredImage, tags: [])
         end
 end
